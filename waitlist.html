@@ -63,7 +63,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 64px 24px 48px;
+      padding: 48px 24px 48px;
       max-width: 560px;
       margin: 0 auto;
       width: 100%;
@@ -72,7 +72,7 @@
     .arabic {
       font-size: 22px;
       color: var(--gold);
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       line-height: 1.8;
       direction: rtl;
     }
@@ -88,7 +88,7 @@
       font-size: 12px;
       font-weight: 500;
       color: var(--gold);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       letter-spacing: 0.04em;
     }
 
@@ -109,7 +109,7 @@
       font-size: clamp(28px, 6vw, 42px);
       font-weight: 600;
       line-height: 1.2;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.02em;
     }
 
@@ -119,24 +119,78 @@
       font-size: 16px;
       color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
       max-width: 440px;
     }
 
+    /* COUNTDOWN TIMER */
+    .countdown {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      justify-content: center;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .countdown-number {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold);
+      min-width: 64px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .countdown-sep {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0.4;
+      padding-top: 10px;
+    }
+
+    /* SOCIAL PROOF WITH TOOLTIPS */
     .social-proof {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       font-size: 13px;
       color: var(--muted);
+      justify-content: center;
     }
 
     .avatars { display: flex; }
 
+    .avatar-wrap {
+      position: relative;
+      margin-left: -8px;
+    }
+
+    .avatar-wrap:first-child { margin-left: 0; }
+
     .avatar {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 2px solid var(--dark);
       display: flex;
@@ -145,15 +199,53 @@
       font-size: 11px;
       font-weight: 600;
       color: var(--gold);
-      margin-left: -8px;
+      cursor: default;
+      transition: transform 0.15s, z-index 0.15s;
+      position: relative;
+      z-index: 1;
     }
 
-    .avatar:first-child { margin-left: 0; }
+    .avatar-wrap:hover .avatar {
+      transform: translateY(-3px);
+      z-index: 10;
+    }
+
     .av1 { background: #1a2235; }
     .av2 { background: #1e1a2e; }
     .av3 { background: #1a2820; }
     .av4 { background: #2a1a1a; }
 
+    .tooltip {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.95);
+      color: #0D111B;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 20;
+    }
+
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4px solid transparent;
+      border-top-color: rgba(255,255,255,0.95);
+    }
+
+    .avatar-wrap:hover .tooltip { opacity: 1; }
+
+    /* TALLY FORM */
     .tally-wrapper {
       width: 100%;
       background: #2a3142;
@@ -173,15 +265,16 @@
     .form-note {
       font-size: 12px;
       color: var(--muted);
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
+    /* FEATURES */
     .features {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       width: 100%;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     .feature-card {
@@ -251,8 +344,9 @@
 
     @media (max-width: 480px) {
       nav { padding: 16px 20px; }
-      .hero { padding: 48px 20px 32px; }
+      .hero { padding: 36px 20px 32px; }
       .features { grid-template-columns: 1fr; }
+      .countdown-number { font-size: 22px; min-width: 52px; padding: 8px 12px; }
     }
   </style>
 </head>
@@ -265,7 +359,7 @@
 
 <div class="hero">
 
-  <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـ٢نِ ٱلرَّحِيمِ</div>
+  <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 
   <div class="badge">
     <div class="badge-dot"></div>
@@ -278,12 +372,48 @@
     When you open a distracting app, a Quran verse appears. Read it — and unlock your phone. Join the waitlist and be the first to download on launch day.
   </p>
 
+  <!-- COUNTDOWN TIMER -->
+  <div class="countdown">
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-days">44</div>
+      <div class="countdown-label">Days</div>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-hours">00</div>
+      <div class="countdown-label">Hours</div>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-minutes">00</div>
+      <div class="countdown-label">Minutes</div>
+    </div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-seconds">00</div>
+      <div class="countdown-label">Seconds</div>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF WITH HOVER TOOLTIPS -->
   <div class="social-proof">
     <div class="avatars">
-      <div class="avatar av1">S</div>
-      <div class="avatar av2">A</div>
-      <div class="avatar av3">F</div>
-      <div class="avatar av4">M</div>
+      <div class="avatar-wrap">
+        <div class="avatar av1">S</div>
+        <div class="tooltip">Sara</div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar av2">A</div>
+        <div class="tooltip">Aisha</div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar av3">F</div>
+        <div class="tooltip">Fatima</div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar av4">M</div>
+        <div class="tooltip">Mohammed</div>
+      </div>
     </div>
     <span>Muslims already on the waitlist</span>
   </div>
@@ -339,6 +469,37 @@
 </footer>
 
 <script src="https://tally.so/widgets/embed.js"></script>
+
+<script>
+  // Countdown to Eid al-Adha — May 27, 2026
+  const launchDate = new Date('2026-05-27T00:00:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = launchDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-minutes').textContent = '00';
+      document.getElementById('cd-seconds').textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
