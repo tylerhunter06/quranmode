@@ -18,7 +18,6 @@
       --border: rgba(201, 168, 76, 0.2);
       --text: #ffffff;
       --muted: rgba(255,255,255,0.55);
-      --subtle: rgba(255,255,255,0.08);
     }
 
     html { scroll-behavior: smooth; }
@@ -124,46 +123,22 @@
       max-width: 440px;
     }
 
-    .tally-wrapper {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .tally-wrapper iframe {
-      width: 100%;
-      border: none;
-      display: block;
-    }
-
-    .form-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
     .social-proof {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
       font-size: 13px;
       color: var(--muted);
     }
 
-    .avatars {
-      display: flex;
-    }
+    .avatars { display: flex; }
 
     .avatar {
       width: 28px;
       height: 28px;
       border-radius: 50%;
       border: 2px solid var(--dark);
-      background: var(--card);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -178,6 +153,28 @@
     .av2 { background: #1e1a2e; }
     .av3 { background: #1a2820; }
     .av4 { background: #2a1a1a; }
+
+    .tally-wrapper {
+      width: 100%;
+      background: #2a3142;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      padding: 8px 8px 0;
+    }
+
+    .tally-wrapper iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
 
     .features {
       display: grid;
@@ -195,10 +192,7 @@
       text-align: left;
     }
 
-    .feature-icon {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
+    .feature-icon { font-size: 20px; margin-bottom: 8px; }
 
     .feature-title {
       font-size: 13px;
@@ -225,15 +219,13 @@
       gap: 12px;
     }
 
-    .launch-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-    }
+    .launch-icon { font-size: 24px; flex-shrink: 0; }
 
     .launch-text {
       font-size: 13px;
       color: var(--muted);
       line-height: 1.6;
+      text-align: left;
     }
 
     .launch-text strong {
@@ -273,7 +265,7 @@
 
 <div class="hero">
 
-  <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+  <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـ٢نِ ٱلرَّحِيمِ</div>
 
   <div class="badge">
     <div class="badge-dot"></div>
@@ -300,7 +292,7 @@
     <iframe
       src="https://tally.so/embed/WOMX0a?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
       width="100%"
-      height="200"
+      height="300"
       title="Waitlist signup"
     ></iframe>
   </div>
@@ -343,4 +335,10 @@
   <span>© 2026 Quran Mode · </span>
   <a href="/">Home</a>
   <span> · </span>
-  <a href="/cdn-cgi/l/email-protection#ea999f9a9a85989eaa9b9f988b8487858e8fc48985"><span cla
+  <a href="mailto:support@quranmode.co">support@quranmode.co</a>
+</footer>
+
+<script src="https://tally.so/widgets/embed.js"></script>
+
+</body>
+</html>
